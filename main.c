@@ -13,7 +13,7 @@ void main(void)
   get_divisor(n, getnum, getnum, 2);
   while(p<n) {
     printf("%d", divisor[p]);
-    p++
+    p++;
   }
   printf("\n");
 }
