@@ -1,21 +1,33 @@
 #include <stdio.h>
 #include <malloc.h>
+int n=0;
 void main(void) 
 {
+  unsigned int p=0;
   int getnum;
-  int *primenum;
+  int *divisor;
+  puts("약수를 구하고자 하는 숫자를 입력해주세요.");
+  printf(":");
   scanf("%d", &getnum);
-    primenum=(int *)malloc(sizeof(int)*(2+2(getnum/10)));
-  divider(getnum, getnum, 2);
+    divisor=(int *)malloc(sizeof(int)*(2+2(getnum/10)));
+  get_divisor(n, getnum, getnum, 2);
+  while(p<n) {
+    printf("%d", divisor[p]);
+    p++
+  }
+  printf("\n");
 }
-void divider(int n, int scope, int num, int used) 
+void get_divisor(extern int n, int scope, int num, int used) 
 {
   int i=used;
-  while(i<scope)
+  while(i<=scope)
   {
-    if(num%i==0)
-      divider(num/i,num,i);
-      primenum[n]=i;
-      i++
+    if(num%i==0) 
+      {
+      divisor[n]=i;
+      n++;
+      get_divisor(n, num/i, num, i);
+      }
+      i++;
   }
 }
