@@ -44,6 +44,7 @@ void calc_divisor(unsigned int n, unsigned int scope, unsigned int num,
 	}
 	/* merge */
 	if (i + 1 > num / i) {
+	divisor[0] = 1;
 		n -= 1;
 		unsigned int p = n;
 		while (p != 0) {
@@ -55,15 +56,14 @@ void calc_divisor(unsigned int n, unsigned int scope, unsigned int num,
 			p--;
 		}
 		free(backpart);
+	divisor[cnt] = num;
 	}
 }
 int sum_divisor(int num) {
 	unsigned int i = 0;
 	unsigned int sum_divisor = 0;
 	extern unsigned int cnt;
-	divisor[0] = 1;
 	calc_divisor(1, num, num, 2);
-	divisor[cnt] = num;
 	while (i < cnt) {
 		sum_divisor += divisor[i];
 		i++;
