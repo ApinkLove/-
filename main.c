@@ -45,7 +45,7 @@ void calc_divisor(unsigned int n, unsigned int scope, unsigned int num,
 	/* merge */
 	if (i + 1 > num / i) {
 	divisor[0] = 1;
-		n -= 1;
+		n--;
 		unsigned int p = n;
 		while (p != 0) {
 			if (divisor[n] != backpart[p]) {
